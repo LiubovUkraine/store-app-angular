@@ -1,0 +1,60 @@
+<md-card class="cart-container">
+  <div mat-dialog-actions class="actions">
+    <button type="button" class="logout-btn" mat-raised-button (click)="logout()">
+      Logout
+    </button>
+
+    <button
+      type="button"
+      class="delete-items-btn"
+      mat-raised-button
+      (click)="deleteItemsFromCart()"
+    >
+      Clear cart
+    </button>
+  </div>
+
+  <div class="cart-info-container">
+    <div class="cart-info">
+      <h2 *ngIf="cart.items" class="mat-h2">
+        Total price - {{ cart.totalPriceOfItems }}$
+        <br />
+        Count of items - {{ cart.countOfItems }}
+      </h2>
+    </div>
+
+    <div class="noItemsMassage" *ngIf="noItemsMassageIsShown">
+      <h1 class="mat-h1">
+        NO ITEMS
+      </h1>
+    </div>
+  </div>
+
+  <div fxLayout="row" fxLayoutWrap fxLayoutGap="2rem" *ngIf="cart.items.length" class="cart">
+    <md-card
+      fxFlex.gt-md="20"
+      fxFlex.md="28"
+      fxFlex.sm="40"
+      fxFlex.xs="100"
+      class="cart-item"
+      *ngFor="let item of cart.items"
+    >
+      <md-card-header>
+        <md-card-title>{{ item.name }}</md-card-title>
+      </md-card-header>
+
+      <md-card-content>
+        <span> {{ item.price }} </span>
+      </md-card-content>
+
+      <button
+        type="button"
+        class="delete-items-btn"
+        mat-raised-button
+        (click)="deleteItemsFromCart(item)"
+      >
+        Delete Item
+      </button>
+    </md-card>
+  </div>
+</md-card>

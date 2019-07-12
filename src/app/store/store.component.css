@@ -1,0 +1,30 @@
+.store-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.store {
+  margin: 0 auto;
+  width: 100%;
+  padding: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: inherit;
+  justify-content: start;
+}
+
+.store-item {
+  position: relative;
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border: 2px solid grey;
+  border-radius: 5px;
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

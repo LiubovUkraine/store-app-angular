@@ -1,0 +1,64 @@
+<mat-card-content>
+  <div class="reset-container">
+    <h2 class="mat-h2">Get new password</h2>
+
+    <form [formGroup]="resetFormGroup" class="reset-form">
+      <mat-form-field>
+        <input
+          class="password-input"
+          formControlName="password"
+          matInput
+          placeholder="New password"
+          required
+          minlength="8"
+        />
+        <mat-error *ngIf="required('password')" class="error">
+          <div>
+            Password required
+          </div>
+        </mat-error>
+
+        <mat-error *ngIf="submitted && wrongMinLength('password')" class="error">
+          <div>
+            Must be at least 8 characters long
+          </div>
+        </mat-error>
+
+        <mat-error *ngIf="submitted && invalid('password')" class="error">
+          <div>
+            Invalid password: should have capital letter, digit and symbol
+          </div>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input
+          class="password-input"
+          formControlName="repPassword"
+          matInput
+          placeholder="Confirm password"
+          required
+          minlength="8"
+        />
+
+        <mat-error *ngIf="required('repPassword')" class="error">
+          <div>
+            Repeat password!
+          </div>
+        </mat-error>
+
+        <mat-error *ngIf="submitted && comparePasswords('repPassword')" class="error">
+          <div>
+            Passwords should be equal
+          </div>
+        </mat-error>
+      </mat-form-field>
+
+      <div mat-dialog-actions class="actions">
+        <button type="submit" mat-raised-button (click)="resetPassword()">Reset</button>
+
+        <button mat-raised-button [routerLink]="['/login']">Back to login</button>
+      </div>
+    </form>
+  </div>
+</mat-card-content>

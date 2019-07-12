@@ -1,0 +1,30 @@
+<div mat-dialog-actions class="actions">
+  <button type="submit" class="submit-btn" mat-raised-button (click)="logout()">
+    Logout
+  </button>
+</div>
+
+<md-card class="store-container">
+  <div fxLayout="row" fxLayoutWrap fxLayoutGap="2rem" *ngIf="store && store.length" class="store">
+    <md-card
+      fxFlex.gt-md="20"
+      fxFlex.md="28"
+      fxFlex.sm="40"
+      fxFlex.xs="100"
+      class="store-item"
+      *ngFor="let item of store"
+    >
+      <md-card-header>
+        <md-card-title>{{ item.name }}</md-card-title>
+      </md-card-header>
+
+      <md-card-content>
+        <span> {{ item.price }} </span>
+      </md-card-content>
+
+      <button mat-raised-button (click)="item.isAddedToCart ? goToCart() : addItemToCart(item)">
+        {{ item.isAddedToCart ? 'go to cart' : 'add item' }}
+      </button>
+    </md-card>
+  </div>
+</md-card>

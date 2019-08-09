@@ -163,7 +163,7 @@ export class LoginService {
   }
 
   public countTotalPriceOfItemsInCart(items) {
-    return items.reduce((sum, item) => (sum += item.price), 0);
+    return items.reduce((sum, item) => (sum += item.price), 0).toFixed(2);
   }
   public deleteItemsFromUserCart(userId: string, items: TItem[]) {
     let myItems = [];

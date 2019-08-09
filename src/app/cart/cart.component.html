@@ -5,6 +5,7 @@
     </button>
 
     <button
+      *ngIf="cart.items.length"
       type="button"
       class="delete-items-btn"
       mat-raised-button
@@ -12,11 +13,13 @@
     >
       Clear cart
     </button>
+
+    <a mat-raised-button [routerLink]="['/store']">to Store</a>
   </div>
 
   <div class="cart-info-container">
     <div class="cart-info">
-      <h2 *ngIf="cart.items" class="mat-h2">
+      <h2 *ngIf="cart.items && cart.items.length" class="mat-h2">
         Total price - {{ cart.totalPriceOfItems }}$
         <br />
         Count of items - {{ cart.countOfItems }}
@@ -30,7 +33,7 @@
     </div>
   </div>
 
-  <div fxLayout="row" fxLayoutWrap fxLayoutGap="2rem" *ngIf="cart.items.length" class="cart">
+  <div fxLayout="row" fxLayoutWrap fxLayoutGap="2rem" *ngIf="cart.items.length" class="cart-items">
     <md-card
       fxFlex.gt-md="20"
       fxFlex.md="28"

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "test-task-instagram": {
+    "store-app-angular": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/test-task-instagram",
+            "outputPath": "dist/store-app-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -58,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "test-task-instagram:build"
+            "browserTarget": "store-app-angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "test-task-instagram:build:production"
+              "browserTarget": "store-app-angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "test-task-instagram:build"
+            "browserTarget": "store-app-angular:build"
           }
         },
         "test": {
@@ -93,7 +93,7 @@
         }
       }
     },
-    "test-task-instagram-e2e": {
+    "store-app-angular-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -102,11 +102,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "test-task-instagram:serve"
+            "devServerTarget": "store-app-angular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "test-task-instagram:serve:production"
+              "devServerTarget": "store-app-angular:serve:production"
             }
           }
         },
@@ -120,5 +120,5 @@
       }
     }
   },
-  "defaultProject": "test-task-instagram"
+  "defaultProject": "store-app-angular"
 }

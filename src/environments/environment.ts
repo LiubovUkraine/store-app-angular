@@ -1,5 +1,5 @@
 export const environment = {
-  production: false,
+  production: true,
   firebase: {
     apiKey: 'AIzaSyCYnwFJU9DM776bY4YEPszkrx4LTzWwFiY',
     authDomain: 'test-task-store.firebaseapp.com',

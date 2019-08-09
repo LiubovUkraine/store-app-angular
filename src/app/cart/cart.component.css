@@ -18,7 +18,7 @@
 
 .cart-item {
   position: relative;
-  background-size: cover;
+  background-color: #A1E4A3;
   width: 150px;
   height: 150px;
   overflow: hidden;

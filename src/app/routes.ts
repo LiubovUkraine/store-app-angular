@@ -14,5 +14,5 @@ export const routes: Routes = [
   { path: 'store/: id', component: StoreComponent },
   { path: 'cart', component: CartComponent, canActivate: [AuthGuard] },
   { path: 'cart/: id', component: CartComponent },
-  { path: '**', component: LoginComponent }, // If no matching route found, go back to home route
+  { path: '**', component: LoginComponent },
 ];
